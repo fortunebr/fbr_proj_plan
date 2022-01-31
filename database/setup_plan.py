@@ -31,7 +31,7 @@ def setupPlanTable():
     session.configure(bind=models.engine)
     s = session()
     try:
-        file_name = "files/plan_data.csv"
+        file_name = "files/plan_data_feb.csv"
         data = Load_Data(file_name)
         s.query(models.PlanCurrent).delete()  # clean table
 
@@ -42,9 +42,9 @@ def setupPlanTable():
                     "size": i[1].lower(),
                     "color": i[2].lower(),
                     "category": i[3].lower(),
-                    "mould_no": i[4].lower(),
-                    "pairs": i[5],
-                    "plan": i[6],
+                    "mould_no": None,
+                    "pairs": i[4],
+                    "plan": i[5],
                 }
             )
             s.add(record)  # Add all the records

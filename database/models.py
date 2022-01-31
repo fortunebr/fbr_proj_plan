@@ -1,9 +1,7 @@
-from logging.config import listen
 import sqlalchemy as sa
 from sqlalchemy.engine import URL
-
-from sqlalchemy.sql.schema import ForeignKey, UniqueConstraint, PrimaryKeyConstraint
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.sql.schema import ForeignKey, UniqueConstraint, PrimaryKeyConstraint
 
 
 conn_string = (
