@@ -1,15 +1,19 @@
+import os
+
 import sqlalchemy as sa
+from dotenv import load_dotenv
 from sqlalchemy.engine import URL
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.schema import ForeignKey, UniqueConstraint, PrimaryKeyConstraint
 
+load_dotenv()
 
 conn_string = (
     r"Driver={ODBC Driver 17 for SQL Server};"
-    r"Server=localhost;"
-    r"Database=testdb;"
-    r"uid=sa;"
-    r"pwd=kalalokia;"
+    rf"Server={os.environ.get('DB_HOST')};"
+    rf"Database={os.environ.get('DB_NAME')};"
+    rf"uid={os.environ.get('DB_USER')};"
+    rf"pwd={os.environ.get('DB_PASS')};"
     r"Integrated Security=false;"
 )
 

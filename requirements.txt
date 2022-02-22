@@ -3,4 +3,6 @@ openpyxl==3.0.7
 sqlalchemy
 pyodbc
 matplotlib
+python-dotenv
+black
 # PyQt6
